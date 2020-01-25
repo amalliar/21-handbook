@@ -1,0 +1,134 @@
+
+  ██████╗  ██╗    ██╗  ██╗ █████╗ ███╗   ██╗██████╗ ██████╗  ██████╗  ██████╗ ██╗  ██╗
+  ╚════██╗███║    ██║  ██║██╔══██╗████╗  ██║██╔══██╗██╔══██╗██╔═══██╗██╔═══██╗██║ ██╔╝
+   █████╔╝╚██║    ███████║███████║██╔██╗ ██║██║  ██║██████╔╝██║   ██║██║   ██║█████╔╝ 
+  ██╔═══╝  ██║    ██╔══██║██╔══██║██║╚██╗██║██║  ██║██╔══██╗██║   ██║██║   ██║██╔═██╗ 
+  ███████╗ ██║    ██║  ██║██║  ██║██║ ╚████║██████╔╝██████╔╝╚██████╔╝╚██████╔╝██║  ██╗
+  ╚══════╝ ╚═╝    ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝ ╚═════╝  ╚═════╝  ╚═════╝ ╚═╝  ╚═╝
+                                                                                   
+Preambule:
+    The purpose of this document is to gather the most useful recources one may need
+    during 21/42 piscine. It is not in any shape or form a complete guide but rather
+    a simple starter pack for those of you unfamiliar with the world of IT.
+
+    You can find the latest version of this document here:
+	https://github.com/amalliar/21-Handbook
+
+FAQ:
+    Q: Why is this guide in english?!
+    A: Because that's the language of code. Learn it.
+
+    Q: How do I exit Vim? 
+    A: :q! to exit without saving changes, :wq to save changes and exit. You should
+       probably run vimtutor (only takes 30 minutes!) and browse through vim
+       directory. If all this seems too overwhelming for you right now, use atom/
+       nano/pico.
+
+    Q: How do I exit Emacs?
+    A: Use Vim.
+
+    Q: I don't understand how to do the 'ft_foo' task HALP!!
+    A: Read the first 100 pages of "The C Programming Language" — this book contains
+       almost all the answers to piscine tasks. Also the tasks of a particular day
+       usually teach the same concept with increasing level of difficulty. Try to
+       apply the knowledge you've gathered from solving previous tasks.
+       (You did solve them, right?)
+
+    Q: I don't know any *NIX commands! Can you give me some pointers?
+    A: Sure, here are a few of the most useful:
+       awk      — pattern scanning and processing language
+       bc       — arbitrary-precision arithmetic language
+       cd       — change the working directory
+       chmod    — change permissions of a file or directory
+       cp       — copy files and directories
+       cut      — cut out selected fields of each line of a file
+       file     — determine file type
+       find     — search for files in a directory hierarchy
+       grep     — print lines matching a pattern
+       ln       — make links between files
+       ls       — list directory contents
+       mkdir    — create a directory
+       mv       — move (rename) files
+       pwd      — print name of current/working directory
+       rm       — remove files or directories
+       sed      — stream editor for filtering and transforming text
+       sort     — sort lines of text files
+       tar      — an archiving utility
+       touch    — change file access and modification times/create empty file
+       tr       — translate or delete characters
+       type     — write a description of command type
+       whatis   — display one-line manual page descriptions 
+
+       A few other things:
+       ~        is your home directory
+       /        is the root of the file system
+       .        is the current directory
+       ..       is the parent directory
+       |        is the pipe, it connects the STDOUT (standard output) of the first
+                process to the STDIN (standard input) of the second
+       &&       is used to chain multiple commands, right side of && will only be
+                evaluated (executed) if the exit status of the left side is zero
+                (i.e. true/normal termination)
+       >        is the redirection operator, it truncates the contents of the file
+                and writes the output of the program to it
+       >>       is the redirection operator, it appends the output of the program
+                to the specified file
+       <        is the redirection operator, it passes the file contents to a
+                program as STDIN (standard input)
+
+    Q: Where can I find information about 'foo' command?
+    A: There are 3 types of documentation on *NIX systems:
+       $> foo --help   display a short overview of most useful commands for 'foo'
+       $> man foo      display a full list of commands for foo with descriptions
+       $> info foo     display an extensive manual on all the features of 'foo'
+                       with some detailed examples
+
+    Q: My script doesn't run!
+    A: "Execute kiddies who know they can't hang
+        Change mode plus x and start with a shebang" — Dual Core, Cipher Punks
+    
+    Q: My code doesn't compile!
+    A: The -Wall -Wextra -Werror gcc flags make it very fastidious — it will not
+       compile unless you follow all the rules and are as explicit about what you
+       want as possible. Here are a couple of links you may find useful:
+
+       http://users.csc.calpoly.edu/~jdalbey/101/Resources/errormessages.html
+       https://www.lix.polytechnique.fr/~liberti/public/computing/prog/c/C/compiler.html
+
+    Q: I can't use 'bar' in my programs? WTF are you serious? This is bullshit!
+    A: That's the whole point of these exercises — if you could use standard
+       library functions they wouldn't be as challenging. If you think this is
+       stupid and dumb you should just face the fact that you're a bad programmer.
+       It's ok to be bad it's not ok to be ignorant.
+
+    Q: My terminal is acting weird...
+    A: Some very bad people like to taunt the newcomers by writing trash into their
+       ~/.bashrc files. Don't leave your computer unlocked and make a backup of your
+       config: cp ~/.bashrc ~/<some place safe> 
+
+       You can also use: chattr +i ~/.bashrc
+       to make the file immutable but running this command requires root privileges.
+
+    Q: Should I help people from other coalitions?
+    A: Yes. This isn't fucking Hogwarts.
+
+    Q: Why did you bother to write all this stuff?
+    A: Because knowledge must be shared.
+
+    Q: What further advice can you give?
+    A: 1. Be ABSOLUTELY SURE you did exactly what the task asked of you. Not less
+       not more.
+       2. Check all the corner cases:
+          — What happens if the input is incorrect e.g. NULL/0?
+          — What happens if the input is too big or too small e.g. INT_MIN/INT_MAX?
+          — What happens if malloc() fails to allocate more memory?
+          — Does your program meet the time requirements?
+       3. Learn to find solutions yourself — that way you will progress much faster.
+       4. I've made a list of some useful websites you may need during the piscine.
+          You will find them in 'links' file.
+       5. By Odin, by Thor! Use your brain!!!
+       6. DON'T GIVE UP!!!
+
+Appendix:
+    If you find any of the information listed in this manual useful feel free to
+    share it with your peers! Good luck to you, hackers!
